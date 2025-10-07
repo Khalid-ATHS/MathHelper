@@ -17,7 +17,6 @@ function sendMessage() {
   addMessage("You", message);
   input.value = "";
 
-  // Bot reply after short delay
   setTimeout(() => {
     addMessage("Bot", "hi");
   }, 300);
