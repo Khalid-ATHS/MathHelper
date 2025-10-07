@@ -7,6 +7,17 @@ function addMessage(sender, text) {
   msg.classList.add("message", sender.toLowerCase());
   msg.innerText = text;
   chatBox.appendChild(msg);
+
+  if(sender === "Bot") {
+    const copyBtn = document.createElement("button");
+    copyBtn.classList.add("copy-btn");
+    copyBtn.innerText = "Copy";
+    copyBtn.addEventListener("click", () => {
+      navigator.clipboard.writeText(text);
+    });
+    chatBox.appendChild(copyBtn);
+  }
+
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
