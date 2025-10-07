@@ -51,7 +51,7 @@ max-width: 75%;
 word-wrap: break-word;
 font-size: 14px;
 animation: fadeIn 0.3s ease;
-box-shadow: 0 0 10px rgba(120,0,255,0.3);
+box-shadow: 0 0 8px rgba(120,0,255,0.2);
 position: relative;
 }
 
@@ -62,27 +62,28 @@ align-self: flex-end;
 }
 
 .message.bot {
-background: rgba(50, 50, 50, 0.9);
+background: rgba(10, 10, 10, 0.9);
 color: #ccc;
 align-self: flex-start;
-border-left: 4px solid #7b5fff;
+border-left: 4px solid rgba(120,0,255,0.5);
 }
 
 .copy-btn {
 margin-top: 5px;
-padding: 3px 8px;
-background: rgba(120,0,255,0.3);
+width: 30px;
+height: 30px;
+background: rgba(120,0,255,0.2);
 color: #fff;
 border: none;
-border-radius: 12px;
+border-radius: 8px;
 cursor: pointer;
 font-size: 12px;
 transition: background 0.2s ease, transform 0.2s ease;
 }
 
 .copy-btn:hover {
-background: rgba(120,0,255,0.6);
-transform: scale(1.05);
+background: rgba(120,0,255,0.5);
+transform: scale(1.1);
 }
 
 .input-container {
