@@ -5,30 +5,25 @@ const chatBox = document.getElementById("chat-box");
 function addMessage(sender, text) {
   const msg = document.createElement("div");
   msg.classList.add("message", sender.toLowerCase());
-  msg.innerText = sender + ": " + text;
+  msg.innerText = text;
   chatBox.appendChild(msg);
   chatBox.scrollTop = chatBox.scrollHeight;
 }
 
-sendBtn.addEventListener("click", () => {
+function sendMessage() {
   const message = input.value.trim();
-  if (message === "") return;
+  if (!message) return;
 
-  // Show user's message
   addMessage("You", message);
-
-  // Clear input
   input.value = "";
 
-  // Auto-reply "hi" after a short delay
+  // Bot reply after short delay
   setTimeout(() => {
     addMessage("Bot", "hi");
   }, 300);
-});
+}
 
-// Allow pressing Enter to send
+sendBtn.addEventListener("click", sendMessage);
 input.addEventListener("keypress", (e) => {
-  if (e.key === "Enter") {
-    sendBtn.click();
-  }
+  if (e.key === "Enter") sendMessage();
 });
